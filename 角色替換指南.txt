@@ -1,0 +1,107 @@
+========================================
+如何替換角色為快打旋風風格的角色
+========================================
+
+【重要說明】
+直接使用官方 Street Fighter Sprites 涉及版權問題。
+建議使用以下合法的替代方案：
+
+========================================
+選項 1：使用官方免費資源 (推薦)
+========================================
+
+Street Fighter 6 提供免費的資源供內容創作者使用。
+訪問：https://www.capcom.com/en/
+尋找"Street Fighter Free Resources" 或類似的創意內容計劃
+
+========================================
+選項 2：使用開源格鬥遊戲角色 (完全免費)
+========================================
+
+推薦資源：
+
+1. OpenGameArt.org - 完全開源
+   - 搜尋："martial artist" 或 "fighter"
+   - 網址：https://opengameart.org/
+
+2. Itch.io 免費資源包
+   - 搜尋："free pixel art fighter" 或 "free game assets"
+   - 網址：https://itch.io/
+
+3. GitHub 開源項目
+   - 搜尋："pixel art character sprites" 或 "fighting game assets"
+
+========================================
+選項 3：使用相似風格的遊戲角色 (合法來源)
+========================================
+
+可以合法使用以下遊戲的 Sprites：
+- The King of Fighters (大量合法資源可用)
+- Tekken 角色 (部分免費資源)
+- Art of Fighting 角色 (部分有開源版本)
+
+========================================
+如何整合新角色 (步驟)
+========================================
+
+1. 下載精靈圖表 (PNG 或 GIF)
+   確保圖表中的所有幀水平排列，尺寸相同
+
+2. 準備資料夾結構
+   角色1: 1/stop/, 1/walk/, 1/jump/, 1/push/, 1/tool/
+   角色2: 2/stop/, 2/smile/, 2/fall_down/
+
+3. 將精靈圖表命名並放入相應資料夾
+   例如：1/stop/stop.png, 1/walk/walk.png 等
+
+4. 在 sketch.js 中更新配置
+   
+   找到：
+   const CHARACTER1_CONFIG = {
+     stop: { width: 1955, height: 212, frames: 14 },
+     walk: { width: 1246, height: 198, frames: 9 },
+     ...
+   }
+   
+   修改為新精靈的實際尺寸：
+   const CHARACTER1_CONFIG = {
+     stop: { width: [新寬度], height: [新高度], frames: [新幀數] },
+     walk: { width: [新寬度], height: [新高度], frames: [新幀數] },
+     ...
+   }
+
+5. 保存後刷新網頁
+
+========================================
+【重要】如何測量精靈圖表的參數
+========================================
+
+1. 用 Photoshop、GIMP 或線上工具開啟精靈圖表
+2. 記下：
+   - 總寬度 (全圖表的寬度像素)
+   - 高度 (圖表的高度像素)
+   - 幀數 (有多少個連續的角色姿態)
+
+3. 在 sketch.js 中設置：
+   width: [總寬度]
+   height: [高度]
+   frames: [幀數]
+
+========================================
+推薦的快打旋風風格替代角色
+========================================
+
+最接近快打旋風風格的免費資源：
+
+1. Kenney.nl - 高質量免費遊戲資產
+   https://kenney.nl/
+   下載："pixel characters" 或 "fighting characters"
+
+2. LPC (Liberated Pixel Cup)
+   完全開源的像素藝術角色集
+   https://opengameart.org/
+
+3. "Street Fighter Fan Game" 開源項目
+   許多 GitHub 項目使用官方允許的资源或自製角色
+
+========================================

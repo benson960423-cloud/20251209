@@ -1,0 +1,74 @@
+========================================
+快打旋風角色替換說明
+========================================
+
+本遊戲支持輕鬆替換角色。以下是替換步驟：
+
+【角色1 (攻擊者) 所需的動作】
+需要以下 6 個動作的精靈圖表（Sprite Sheet）：
+1. stop.png - 待機動作（水平排列）
+2. walk.png - 走路動作（水平排列）
+3. jump.png - 跳躍動作（水平排列）
+4. push.png - 攻擊動作（水平排列）
+5. tool.png - 飛行道具動畫（水平排列）
+6. run.png - 奔跑動作（可選）
+
+【角色2 (互動者) 所需的動作】
+需要以下 3 個動作的精靈圖表（Sprite Sheet）：
+1. stop_2.png - 待機動作（水平排列）
+2. smile_2.png - 微笑/高興動作（水平排列）
+3. fall_down_2.png - 倒下動作（水平排列）
+
+【如何替換角色】
+
+1. 找到新角色的精靈圖表（Sprite Sheet）
+   推薦網站：
+   - https://www.spriters-resource.com/
+   - https://spritedatabase.net/
+   - OpenGameArt.org (開源遊戲資源)
+
+2. 下載的精靈圖表應該是：
+   - PNG 或 GIF 格式
+   - 角色姿態水平排列在一張圖中
+   - 所有幀的尺寸相同
+
+3. 替換步驟：
+   a) 將新的精靈圖表命名為上述對應的檔案名稱
+   b) 放入相應的資料夾：
+      - 角色1: 放在 1/stop/, 1/walk/, 1/jump/, 1/push/, 1/tool/ 資料夾
+      - 角色2: 放在 2/stop/, 2/smile/, 2/fall_down/ 資料夾
+   c) 在 sketch.js 中修改相應的以下參數：
+
+【需要在 sketch.js 中調整的參數】
+
+對於角色1：
+- spriteWidth: 精靈圖表的總寬度
+- spriteHeight: 精靈圖表的高度
+- numFrames: 圖表中有多少幀（連續的角色姿態數量）
+
+- walkSpriteWidth/Height, walkNumFrames
+- jumpSpriteWidth/Height, jumpNumFrames
+- pushSpriteWidth/Height, pushNumFrames
+- toolSpriteWidth/Height, toolNumFrames
+
+對於角色2：
+- spriteWidth2, spriteHeight2, numFrames2 (待機動作)
+- smileSpriteWidth2, smileSpriteHeight2, smileNumFrames2 (微笑動作)
+- fallDownSpriteWidth2, fallDownSpriteHeight2, fallDownNumFrames2 (倒下動作)
+
+【例子】
+如果你的精靈圖表寬度是 800px，高度是 100px，有 8 幀動作：
+- spriteWidth = 800
+- spriteHeight = 100
+- numFrames = 8
+
+========================================
+推薦的開源角色來源
+========================================
+
+1. OpenGameArt.org - 完全開源，可自由使用
+2. Itch.io - 許多免費遊戲資源包
+3. GitHub - 搜尋 "pixel art characters sprite"
+4. The Spriters Resource - 大量遊戲提取的精靈圖
+
+========================================
